@@ -158,10 +158,10 @@ model-viewer > #ar-prompt > img {
 #material-list {
   list-style: none;
   padding: 0;
+  font-family: "Poppins", sans-serif;
 }
 
 li {
-  position: relative;
   padding: 10px;
   border-radius: 5px;
   margin-bottom: 5px;

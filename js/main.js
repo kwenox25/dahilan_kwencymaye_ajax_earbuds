@@ -57,7 +57,8 @@
           );
           materialDescription.textContent = material.description;
 
-          //append the populated template to the list
+          //append the populated template to the list.
+
           materialList.appendChild(clone);
         });
       })

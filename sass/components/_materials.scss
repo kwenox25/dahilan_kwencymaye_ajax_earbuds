@@ -3,10 +3,12 @@
 #material-list {
   list-style: none;
   padding: 0;
+
+  font-family: a.$body-font;
 }
 li {
-  position: relative;
   padding: 10px;
+  //   padding-left: 50px;
   border-radius: 5px;
   margin-bottom: 5px;
 
