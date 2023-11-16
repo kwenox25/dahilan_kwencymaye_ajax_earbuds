@@ -155,6 +155,11 @@ model-viewer > #ar-prompt > img {
   animation: circle 4s linear infinite;
 }
 
+#model svg,
+.materials-div svg {
+  max-width: 100px;
+}
+
 #material-list {
   list-style: none;
   padding: 0;
