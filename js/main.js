@@ -3,7 +3,8 @@
   const model = document.querySelector("#model");
   const hotspots = document.querySelectorAll(".Hotspot");
 
-  // const materialsDiv = document.querySelector(".materials-div");
+  const materialsDiv = document.querySelector(".materials-div");
+  const materialsDivH2 = document.querySelector(".materials-div h2");
 
   const materialTemplate = document.querySelector("#material-template");
   const materialList = document.querySelector("#material-list");
@@ -102,17 +103,17 @@
   loadInfoBoxes();
 
   function loadMaterialInfo() {
-    // materialsDiv.innerHTML = spinner;
+    materialsDiv.innerHTML = spinner;
     fetch("https://swiftpixel.com/earbud/api/materials")
       .then((response) => response.json())
       .then((materialListData) => {
         console.log(materialListData);
-        materialListData.forEach((material) => {
-          //clone the template
 
+        materialListData.forEach((material) => {
+          // clone the template
           const clone = materialTemplate.content.cloneNode(true);
 
-          //populate the cloned template
+          // populate the cloned template
           const materialHeading = clone.querySelector(".material-heading");
           materialHeading.textContent = material.heading;
 
@@ -121,13 +122,20 @@
           );
           materialDescription.textContent = material.description;
 
-          //append the populated template to the list.
+          materialsDiv.innerHTML = "";
+          materialsDiv.appendChild(materialsDivH2);
+          materialsDiv.appendChild(materialList);
           materialList.appendChild(clone);
         });
-        // materialsDiv.innerHTML = "";
-        // materialList.appendChild(clone);
+
+        // remove the spinner after appending all materials
       })
-      .catch((error) => console.error(error)); //catch and report any errors
+      .catch((error) =>
+        console.error(
+          "You don't have internet or your internet is slow, try again later.",
+          error
+        )
+      );
   }
 
   loadMaterialInfo();
