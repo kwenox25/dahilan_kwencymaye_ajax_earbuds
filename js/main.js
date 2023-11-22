@@ -69,7 +69,6 @@
   }
 
   function loadInfoBoxes() {
-    //   hotspotDiv.innerHTML = spinner;
     fetch("https://swiftpixel.com/earbud/api/infoboxes")
       .then((response) => response.json())
       .then((infoBoxes) => {
@@ -87,7 +86,6 @@
           const imgElement = document.createElement("img");
           imgElement.src = `images/${infoBox.thumbnail}`;
 
-          //    hotspotDiv.innerHTML = "";
           selected.appendChild(imgElement);
           selected.appendChild(titleElement);
           selected.appendChild(textElement);
