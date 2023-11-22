@@ -93,13 +93,16 @@
           selected.appendChild(textElement);
         });
       })
-      .catch((error) =>
+      .catch((error) => {
         console.error(
           "You don't have internet or your internet is slow, try again later.",
           error
-        )
-      ); //catch and report any errors
+        );
+
+        model.innerHTML = "Failed to load content. Please try again.";
+      });
   }
+
   loadInfoBoxes();
 
   function loadMaterialInfo() {
@@ -130,12 +133,14 @@
 
         // remove the spinner after appending all materials
       })
-      .catch((error) =>
+      .catch((error) => {
         console.error(
           "You don't have internet or your internet is slow, try again later.",
           error
-        )
-      );
+        );
+
+        materialsDiv.innerHTML = "Failed to load content. Please try again.";
+      });
   }
 
   loadMaterialInfo();
