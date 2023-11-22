@@ -69,6 +69,7 @@
   }
 
   function loadInfoBoxes() {
+    // hotspotDiv.innerHTML = spinner;
     fetch("https://swiftpixel.com/earbud/api/infoboxes")
       .then((response) => response.json())
       .then((infoBoxes) => {
