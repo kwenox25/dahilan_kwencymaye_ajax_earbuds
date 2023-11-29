@@ -2,7 +2,7 @@
   //variables
   const model = document.querySelector("#model");
   const hotspots = document.querySelectorAll(".Hotspot");
-
+  const hotspotDiv = document.querySelector("#model-div");
   const materialsDiv = document.querySelector(".materials-div");
   const materialsDivH2 = document.querySelector(".materials-div h2");
 
@@ -69,7 +69,7 @@
   }
 
   function loadInfoBoxes() {
-    // model.innerHTML = spinner;
+    // hotspotDiv.innerHTML = spinner;
     fetch("https://swiftpixel.com/earbud/api/infoboxes")
       .then((response) => response.json())
       .then((infoBoxes) => {
@@ -87,7 +87,6 @@
           const imgElement = document.createElement("img");
           imgElement.src = `images/${infoBox.thumbnail}`;
 
-          // model.innerHTML = "";
           selected.appendChild(imgElement);
           selected.appendChild(titleElement);
           selected.appendChild(textElement);
@@ -99,7 +98,7 @@
           error
         );
 
-        model.innerHTML = "Failed to load content. Please try again.";
+        hotspotDiv.innerHTML = "Failed to load content. Please try again.";
       });
   }
 
